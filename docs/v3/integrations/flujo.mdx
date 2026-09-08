@@ -141,5 +141,5 @@ You can also attach the server to an agent and ask it to roll dice; Tool Tester 
 ## Troubleshooting
 
 - **Test run times out on first `uv` / `uvx` use** — package download can be slow; wait for the longer runner timeout or pre-warm with `uv run --with fastmcp python server.py` once in a terminal.
-- **`MODULE_NOT_FOUND`** — FLUJO surfaces this when Argument paths are wrong; fix the `server.py` path rows under **Arguments**.
+- **Wrong script path** — with `python /absolute/path/to/server.py`, a bad path usually shows `can't open file` / `No such file or directory` in the Test run console (FLUJO may also surface `MODULE_NOT_FOUND` for other import/path mistakes). Fix the `server.py` path rows under **Arguments**.
 - **Command not found** — **Run command** must be a single executable (`uv`, `python`, `uvx`), with everything else in **Arguments**, not one pasted shell line.
